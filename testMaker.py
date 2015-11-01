@@ -99,9 +99,9 @@ def dry_run(scenario):
 	
 def choose_name():
 	title = None
-	while title is None or os.path.isfile(DIRECTORY+'/'+title):
+	while title is None or os.path.isfile(filename_pattern.format(DIRECTORY,title)):
 		if title is not None:
-			original_print('{0} already exists'.format(title))
+			original_print('{0} already exists'.format(filename_pattern.format(DIRECTORY,title)))
 		original_print('OK, please indicate a name for your test:')
 		title = original_input('>')
 	return title
@@ -109,6 +109,8 @@ def choose_name():
 def check_dir():
 	if not os.path.isdir(DIRECTORY):
 		os.mkdir(DIRECTORY)
+	if not os.path.isfile(DIRECTORY+'/__init__.py'):
+		open(DIRECTORY+'/__init__.py', 'a').close()
 
 if __name__ == '__main__':
 	check_dir()
