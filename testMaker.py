@@ -101,7 +101,7 @@ def get_cmd():
 				except Exception as ex:
 					local_vars['cmd'] = local_vars['cmd'].replace('assert(','self.assertTrue(')
 					local_vars['tpl'] = "  {0}^\n{1}:{2}"
-					local_vars['indent'] = ' '*(ex.args[1][2]-1) if len(ex.args)>1 else ''
+					local_vars['indent'] = ' '*(ex.args[1][2]+1) if len(ex.args)>1 else ''
 					local_vars['msg_name'] = type(ex).__name__
 					local_vars['msg_details'] = ex.args[0]
 					local_vars['message'] = local_vars['tpl'].format(local_vars['indent'],local_vars['msg_name'],local_vars['msg_details'])
