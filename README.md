@@ -1,6 +1,19 @@
 # unittestmaker
 Simplify unittest creation with recording
 
+## Setup
+You can retrive from github with:
+```
+$ git clone https://github.com/kavod/unittestmaker.git
+```
+Then, in the current directory (parent of the project folder), just type:
+```
+$ sudo pip install unittestmaker/
+```
+or, if you wish to install without root permissions:
+```
+$ pip install --user unittestmaker/
+```
 ## Usage
 ```
 $ python -m testMaker
